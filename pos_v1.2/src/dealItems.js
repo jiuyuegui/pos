@@ -22,7 +22,7 @@ function matchItems(key,allItems,promotions,tidyInputs) {
 
 function unify(input,Reg) {
   var index = input.search(Reg);
-  var n = parseInt(input.substr(index+1,(input.length)));//数量截取
+  var n = parseInt(input.substr(index+1,(input.length+1)));//数量截取
   input = input.substr(0,index);                         //barcode截取
   return [input,n];
 }
