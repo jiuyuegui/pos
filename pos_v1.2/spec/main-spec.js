@@ -21,13 +21,9 @@ describe('pos', function () {
 
         spyOn(console, 'log');
 
-
-        var dealItems = printInventory(inputs,/-/g); //函数闭包，返回一个匹配商品函数，barcode形式可变化
-        //注意正则表达式传入时不用加引号，它是对象不是字符串
         var promotions = loadPromotions();
-        var printInfo = dealItems(allItems,promotions); //返回打印商品信息数组，商品类型促销类型可变化
-
-        printList(printInfo);                       //打印清单，打印方式可变化
+        var printInfo = printInventory(inputs,allItems,promotions); //函数闭包,返回打印信息数组,barcode形式可变,商品促销类型可变
+        printList(printInfo);                       
 
         var expectText =
             '***<没钱赚商店>购物清单***\n' +
